@@ -11,6 +11,7 @@ export default class AircornScreen extends React.Component {
           onPress={() => Actions.home()}
           >
           AircornScreen
+          {this.props.text}
         </StyledText>
       </StyledView>
     );
@@ -19,7 +20,7 @@ export default class AircornScreen extends React.Component {
 
 const StyledView = styled.View`
   flex: 1;
-  background-color: red;
+  background-color: deepskyblue;
   align-items: center;
   justify-content: center;
 `

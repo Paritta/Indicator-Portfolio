@@ -18,10 +18,10 @@ export default class InputScreen extends React.Component {
             {key: 'Aircorn07'},
           ]}
           renderItem={({item}) => 
-            <StyledText
-              onPress={()=>Actions.aircornscreen()}>
+            <Text
+              onPress={()=>Actions.aircornscreen({text: item.key})}>
               {item.key}
-            </StyledText>}
+            </Text>}
           />
         {/* <StyledText
           onPress={() => Actions.homescreen()}
@@ -35,15 +35,16 @@ export default class InputScreen extends React.Component {
 
 const StyledView = styled.View`
   flex: 1;
-  background-color: white;
-  align-items: center;
-  justify-content: center;
+  background-color: deepskyblue;
 `
 
 const StyledText = styled.Text`
   font-size: 20px;
-  text-align: center;
-  color: red;
+  text-align: left;
+  padding: 10px;
+  margin-left: 10;
+  height: 44;
+  color: white;
 `
 
 const StyledFlatList = styled.FlatList`
