@@ -18,10 +18,10 @@ export default class InputScreen extends React.Component {
             {key: 'Aircorn07'},
           ]}
           renderItem={({item}) => 
-            <Text
+            <StyledText
               onPress={()=>Actions.aircornscreen({text: item.key})}>
               {item.key}
-            </Text>}
+            </StyledText>}
           />
         {/* <StyledText
           onPress={() => Actions.homescreen()}
@@ -35,7 +35,8 @@ export default class InputScreen extends React.Component {
 
 const StyledView = styled.View`
   flex: 1;
-  background-color: deepskyblue;
+  background-color: deeppink;
+  opacity: 0.6;
 `
 
 const StyledText = styled.Text`

@@ -20,7 +20,8 @@ export default class AircornScreen extends React.Component {
 
 const StyledView = styled.View`
   flex: 1;
-  background-color: deepskyblue;
+  background-color: deeppink;
+  opacity: 0.6;
   align-items: center;
   justify-content: center;
 `
