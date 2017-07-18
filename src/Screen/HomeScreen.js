@@ -22,7 +22,7 @@ export default class HomeScreen extends React.Component {
 
 const StyledView = styled.View`
   flex: 1;
-  background-color: lightgreen;
+  background-color: deepskyblue;
   align-items: center;
   justify-content: center;
 `
