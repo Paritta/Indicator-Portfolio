@@ -30,6 +30,11 @@ Styled-Component
 
 > 진짜 컴포넌트의 시대다.
 
+<img src='./img/image2.PNG'>
+
+> repo 소스 코드 캡쳐
+
+
 Source Code
 ===
 > [https://github.com/tjdgns8047/React-Native-Tuto](https://github.com/tjdgns8047/React-Native-Tuto)
