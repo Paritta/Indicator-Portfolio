@@ -3,13 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import { Actions } from 'react-native-router-flux'
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
+import Timer from '../Component/Timer'
 
 export default class AircornScreen extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: '1', title: 'First' },
-      { key: '2', title: 'Second' },
+      { key: '1', title: 'Total' },
+      { key: '2', title: 'Timer' },
+      { key: '3', title: 'About' },
     ],
   };
 
@@ -24,12 +26,15 @@ export default class AircornScreen extends React.Component {
   _renderScene = ({ route }) => {
     switch (route.key) {
     case '1':
-      return <StyledView style={[ styles.page, { backgroundColor: 'white' } ]} >
+      return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} >
                 <StyledText>This is Timer</StyledText>
+                <Timer/>
               </StyledView>
         ;
     case '2':
-      return <View style={[ styles.page, { backgroundColor: '#673ab7' } ]} />;
+      return <View style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} />;
+    case '3':
+      return <View style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} />;
     default:
       return null;
     }

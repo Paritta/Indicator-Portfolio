@@ -35,7 +35,7 @@ export default class InputScreen extends React.Component {
 
 const StyledView = styled.View`
   flex: 1;
-  background-color: deeppink;
+  background-color: deepskyblue;
   opacity: 0.6;
 `
 

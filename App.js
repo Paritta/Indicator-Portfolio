@@ -9,7 +9,6 @@ import HomeScreen from './src/Screen/HomeScreen'
 import AircornScreen from './src/Screen/AircornScreen'
 import InputScreen from './src/Screen/InputScreen'
 
-
 export default class App extends Component {
       
   render() {
