@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import { Actions } from 'react-native-router-flux'
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 import Timer from '../Component/Timer'
+import About from '../Component/About'
 
 export default class AircornScreen extends React.Component {
   state = {
@@ -27,14 +28,14 @@ export default class AircornScreen extends React.Component {
     switch (route.key) {
     case '1':
       return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} >
-                <StyledText>This is Timer</StyledText>
                 <Timer/>
               </StyledView>
         ;
     case '2':
       return <View style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} />;
     case '3':
-      return <View style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} />;
+      return <View style={[ styles.page, { backgroundColor: 'deepskyblue' } ]}>
+             </View>;
     default:
       return null;
     }
@@ -62,7 +63,7 @@ const StyledView = styled.View`
 const StyledText = styled.Text`
   font-size: 20px;
   text-align: center;
-  color: black;
+  color: lightpink;
 `
 const styles = StyleSheet.create({
   container: {

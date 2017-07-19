@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 import { Button } from 'react-native-elements'
+import Indicator from './Indicator'
 
-export default class App extends Component {
+export default class Timer extends Component {
  
     constructor( props ) {
         super( props );
@@ -14,7 +15,6 @@ export default class App extends Component {
             miliseconds: '00',
             startDisabled: true,
             stopDisabled: false,
-            text: '1'
         }
 
         this.onButtonStart = this.onButtonStart.bind(this);
@@ -50,22 +50,16 @@ export default class App extends Component {
       }
 
       onButtonStart() {
-        //   console.log('Call onButtonStart!!!');
-          this.setState({text: 'Call onButtonStart!!!'});
           this.start();
           this.setState({startDisabled: true, stopDisabled: false});
       }
 
       onButtonStop() {
-        //   console.log('Call onButtonStop!!!');
-          this.setState({text: 'Call onButtonStop!!!'});
           clearInterval(this.state.timer);
           this.setState({startDisabled: false, stopDisabled: true});
       }
 
       onButtonClear() {
-        //   console.log('Call onButtonClear!!!');
-          this.setState({text: 'Call onButtonClear!!!'});
           this.setState({
             timer: null,
             counter: '00',
@@ -76,29 +70,29 @@ export default class App extends Component {
   render() {
     return (
       <ContainerView>
-        <CounterText>{this.state.text}</CounterText>
+        <Indicator/>
         <CounterText>{this.state.counter} : {this.state.miliseconds}</CounterText>
-        <ButtonView>
-          <Button
+            <Button
             disabled={this.state.startDisabled}
             onPress={this.onButtonStart}
             title="Start"
-            color="greenyellow"
-            accessibilityLabel="Start"
-          />
-          <Button
+            buttonStyle={styles.someButtonStyle}
+            icon={{name: 'grain'}}
+            />
+            <Button
             disabled={this.state.stopDisabled}
             onPress={this.onButtonStop}
             title="Stop"
-            color="hotpink"
-          />
-          <Button
+            buttonStyle={styles.someButtonStyle}
+            icon={{name: 'grain'}}
+            />
+            <Button
             disabled={this.state.startDisabled}
             onPress={this.onButtonClear}
             title="Clear"
-            color="lavender"
-          />
-        </ButtonView>
+            buttonStyle={styles.someButtonStyle}
+            icon={{name: 'grain'}}
+            />
       </ContainerView>
     );
   }
@@ -108,16 +102,23 @@ const ContainerView = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  opacity: 0.6;
 `;
 
-const ButtonView = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-`
-
 const CounterText = styled.Text`
-    font-size: 50;
+    color: white;
+    font-size: 30;
     text-align: center;
     height: 60;
     margin: 10px;
 `
+
+var styles = StyleSheet.create({
+  someButtonStyle: {
+    padding: 20,
+    height:20,
+    width: 350,
+    backgroundColor: 'mediumspringgreen',
+    marginTop:5
+  },
+});

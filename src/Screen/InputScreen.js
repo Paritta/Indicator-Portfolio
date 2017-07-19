@@ -9,13 +9,11 @@ export default class InputScreen extends React.Component {
       <StyledView>
         <StyledFlatList
           data={[
-            {key: 'Aircorn01'},
-            {key: 'Aircorn02'},
-            {key: 'Aircorn03'},
-            {key: 'Aircorn04'},
-            {key: 'Aircorn05'},
-            {key: 'Aircorn06'},
-            {key: 'Aircorn07'},
+            {key: '세탁기'},
+            {key: '에어콘'},
+            {key: '식기세척기'},
+            {key: '밥솥'},
+            {key: '진공청소기'},
           ]}
           renderItem={({item}) => 
             <StyledText
