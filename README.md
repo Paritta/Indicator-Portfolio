@@ -20,6 +20,20 @@ Feature
 * 라우팅
 * Tabbar
 
+> 관리할 state가 많지 않아 Redux 구조를 쓰지 않고 state를 단순하게 관리했다. 
+
+Styled-Component
+===
+> Sass나 less 같은 전처리 또는 후처리 프로세서를 사용하지 않고 스타일링 했다. Styeld-Component는 리액트의 Component가 가진 이점을 극대화 시켜준다. 사실 평소에는 관심만 가지고 있다가 처음 써본 라이브러린데 코드가 정말 깔끔하게 짜진 것 같다.
+
+<img src='./img/image1.PNG'>
+
+> 진짜 컴포넌트의 시대다.
+
+Source Code
+===
+> [https://github.com/tjdgns8047/React-Native-Tuto](https://github.com/tjdgns8047/React-Native-Tuto)
+
 
 Main Technology stack
 ===
