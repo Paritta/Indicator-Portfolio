@@ -9,11 +9,11 @@ export default class InputScreen extends React.Component {
       <StyledView>
         <StyledFlatList
           data={[
-            {key: '세탁기', value: '1'},
-            {key: '에어콘', value: '1'},
-            {key: '식기세척기', value: '1'},
-            {key: '밥솥', value: '1'},
-            {key: '진공청소기', value: '1'},
+            {key: '세탁기', value: '0.003'},
+            {key: '에어콘', value: '0.012'},
+            {key: '식기세척기', value: '0.073'},
+            {key: '밥솥', value: '0.008'},
+            {key: '진공청소기', value: '0.141'},
           ]}
           renderItem={({item}) => 
             <StyledText
@@ -21,11 +21,6 @@ export default class InputScreen extends React.Component {
               {item.key}
             </StyledText>}
           />
-        {/* <StyledText
-          onPress={() => Actions.homescreen()}
-          >
-          InputScreen
-        </StyledText> */}
       </StyledView>
     );
   }
@@ -44,7 +39,4 @@ const StyledText = styled.Text`
   margin-left: 10;
   height: 44;
   color: white;
-`
-
-const StyledFlatList = styled.FlatList`
 `

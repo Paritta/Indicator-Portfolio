@@ -32,12 +32,13 @@ export default class AircornScreen extends React.Component {
       return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]}>
                 <AboutTitleText>About</AboutTitleText>
                 <StyledAboutView>
-                    <AboutText>세탁기 / 1시간 사용시의 CO2 배출량: 14g / 기준</AboutText>
-                    <AboutText>에어콘 / 1시간 사용시의 CO2 배출량: 44g / 기준</AboutText>
-                    <AboutText>식기세척기 / 1시간 사용시의 CO2 배출량: 226g / 기준</AboutText>
-                    <AboutText>밥솥 / 1시간 사용시의 CO2 배출량: 31g / 기준</AboutText>
-                    <AboutText>진공 청소기 / 1시간 사용시의 CO2 배출량: 51g / 기준</AboutText>
-                    <AboutText>프라임 경제 ***세계 최초로 가전제품에 이산화탄소 배출량 표시*** 기사 참고</AboutText>
+                    <AboutText>세탁기 / 1시간 사용시의 CO2 배출량: 14g / 기준 /1초당 0.003</AboutText>
+                    <AboutText>에어콘 / 1시간 사용시의 CO2 배출량: 44g / 기준 0.012</AboutText>
+                    <AboutText>식기세척기 / 1시간 사용시의 CO2 배출량: 226g / 기준 /1초당 0.073</AboutText>
+                    <AboutText>밥솥 / 1시간 사용시의 CO2 배출량: 31g / 기준 /1초당 0.008</AboutText>
+                    <AboutText>진공 청소기 / 1시간 사용시의 CO2 배출량: 51g / 기준 /1초당 0.141</AboutText>
+                    <AboutText>1초당 Co2 배출량은 소수 넷째 자리에서 내림</AboutText>
+                    <AboutText>프라임 경제 ***세계 최초로 가전제품에 Co2 배출량 표시*** 기사 참고</AboutText>
                 </StyledAboutView>
              </StyledView>;
     default:
@@ -48,7 +49,6 @@ export default class AircornScreen extends React.Component {
   render() {
     return (
       <StyledView>
-        <StyledText>{this.props.value}</StyledText>
         <TabViewAnimated
           style={styles.container}
           navigationState={this.state}
