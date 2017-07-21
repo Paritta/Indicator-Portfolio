@@ -9,15 +9,15 @@ export default class InputScreen extends React.Component {
       <StyledView>
         <StyledFlatList
           data={[
-            {key: '세탁기'},
-            {key: '에어콘'},
-            {key: '식기세척기'},
-            {key: '밥솥'},
-            {key: '진공청소기'},
+            {key: '세탁기', value: '1'},
+            {key: '에어콘', value: '1'},
+            {key: '식기세척기', value: '1'},
+            {key: '밥솥', value: '1'},
+            {key: '진공청소기', value: '1'},
           ]}
           renderItem={({item}) => 
             <StyledText
-              onPress={()=>Actions.aircornscreen({text: item.key})}>
+              onPress={()=>Actions.aircornscreen({value: item.value})}>
               {item.key}
             </StyledText>}
           />

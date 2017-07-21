@@ -11,8 +11,10 @@ export default class Timer extends Component {
 
         this.state = {
             timer: null,
+            hour: '0',
             counter: '00',
             miliseconds: '00',
+            Indicator: '0',
             startDisabled: true,
             stopDisabled: false,
         }
@@ -34,16 +36,25 @@ export default class Timer extends Component {
         var self = this;
         let timer = setInterval(()=> {
           var num = (Number(this.state.miliseconds) + 1).toString(),
-              count = this.state.counter;
+              count = this.state.counter,
+              hour = this.state.hour;
+          var Indicator = (Number(this.state.miliseconds) + 1).toString();
 
           if( Number(this.state.miliseconds) == 59 ) {
               count = (Number(this.state.counter) + 1).toString();
               num = '00';
           }
+
+          if( Number(this.state.counter) == 59 ) {
+              hour = (Number(this.state.hour) + 1).toString();
+              count = '00';
+          }
           
           self.setState({
               counter: count.length == 1 ? '0'+count : count,
-              miliseconds: num.length == 1 ? '0'+num : num
+              miliseconds: num.length == 1 ? '0'+num : num,
+              Indicator: Indicator,
+              hour: hour
           });
         }, 1000);
         this.setState({timer});
@@ -70,28 +81,28 @@ export default class Timer extends Component {
   render() {
     return (
       <ContainerView>
-        <Indicator/>
-        <CounterText>{this.state.counter} : {this.state.miliseconds}</CounterText>
+        <Indicator Indicator={this.state.Indicator}/>
+        <CounterText>{this.state.hour} : {this.state.counter} : {this.state.miliseconds}</CounterText>
             <Button
-            disabled={this.state.startDisabled}
-            onPress={this.onButtonStart}
-            title="Start"
-            buttonStyle={styles.someButtonStyle}
-            icon={{name: 'grain'}}
+              disabled={this.state.startDisabled}
+              onPress={this.onButtonStart}
+              title="Start"
+              buttonStyle={styles.someButtonStyle}
+              icon={{name: 'grain'}}
             />
             <Button
-            disabled={this.state.stopDisabled}
-            onPress={this.onButtonStop}
-            title="Stop"
-            buttonStyle={styles.someButtonStyle}
-            icon={{name: 'grain'}}
+              disabled={this.state.stopDisabled}
+              onPress={this.onButtonStop}
+              title="Stop"
+              buttonStyle={styles.someButtonStyle}
+              icon={{name: 'grain'}}
             />
             <Button
-            disabled={this.state.startDisabled}
-            onPress={this.onButtonClear}
-            title="Clear"
-            buttonStyle={styles.someButtonStyle}
-            icon={{name: 'grain'}}
+              disabled={this.state.startDisabled}
+              onPress={this.onButtonClear}
+              title="Clear"
+              buttonStyle={styles.someButtonStyle}
+              icon={{name: 'grain'}}
             />
       </ContainerView>
     );
