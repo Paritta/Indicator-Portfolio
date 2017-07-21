@@ -40,3 +40,5 @@ const StyledText = styled.Text`
   height: 44;
   color: white;
 `
+const StyledFlatList = styled.FlatList`
+`

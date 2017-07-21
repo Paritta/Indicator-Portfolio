@@ -81,6 +81,9 @@ export default class Timer extends Component {
   render() {
     return (
       <ContainerView>
+        <CounterText>
+          {this.props.value}
+        </CounterText>
         <Indicator Indicator={this.state.Indicator}/>
         <CounterText>{this.state.hour} : {this.state.counter} : {this.state.miliseconds}</CounterText>
             <Button

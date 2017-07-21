@@ -24,8 +24,6 @@ const ContainerView = styled.View`
     margin-bottom:10;
 `;
 
-
-
 const CounterText = styled.Text`
     color: white;
     font-size: 35;

@@ -9,9 +9,8 @@ export default class AircornScreen extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: '1', title: 'Total' },
-      { key: '2', title: 'Timer' },
-      { key: '3', title: 'About' },
+      { key: '1', title: 'Timer' },
+      { key: '2', title: 'About' },
     ],
   };
 
@@ -22,13 +21,9 @@ export default class AircornScreen extends React.Component {
     switch (route.key) {
     case '1':
       return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} >
-              </StyledView>
-        ;
-    case '2':
-      return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} >
-                <Timer/>
+                <Timer value={this.state.value}/>
              </StyledView>
-    case '3':
+    case '2':
       return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]}>
                 <AboutTitleText>About</AboutTitleText>
                 <StyledAboutView>
