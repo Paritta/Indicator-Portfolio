@@ -1,77 +1,75 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import { Actions } from 'react-native-router-flux'
-import { TabViewAnimated, TabBar } from 'react-native-tab-view';
-import Timer from '../Component/Timer'
-import About from '../Component/About'
+import Tabs from '../Component/Tabs'
+// import Timer from '../Component/Timer'
+// import About from '../Component/About'
 
-export default class AircornScreen extends React.Component {
-  state = {
-    index: 0,
-    routes: [
-      { key: '1', title: 'Total' },
-      { key: '2', title: 'Timer' },
-      { key: '3', title: 'About' },
-    ],
-  };
+export default class AircornScreen extends PureComponent {
 
-  _handleChangeTab = (index) => {
-    this.setState({ index });
-  };
-
-  _renderHeader = (props) => {
-    return <TabBar {...props} />;
-  };
-
-  _renderScene = ({ route }) => {
-    switch (route.key) {
-    case '1':
-      return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} >
-                <Timer/>
-              </StyledView>
-        ;
-    case '2':
-      return <View style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} />;
-    case '3':
-      return <View style={[ styles.page, { backgroundColor: 'deepskyblue' } ]}>
-             </View>;
-    default:
-      return null;
-    }
-  };
   render() {
     return (
-      <StyledView>
-        <TabViewAnimated
-          style={styles.container}
-          navigationState={this.state}
-          renderScene={this._renderScene}
-          renderHeader={this._renderHeader}
-          onRequestChangeTab={this._handleChangeTab}
-        />
-      </StyledView>
+      <View style = { styles.container }>
+        <Tabs>
+          {/* First tab */}
+          <View title="WELCOME" style={styles.content}>
+            <Text style={styles.header}>
+              Welcome to React Native
+            </Text>
+            <Text style={styles.text}>
+              The best technology to build cross platform mobile apps with
+            </Text>
+          </View>
+          {/* Second tab */}
+          <View title="NATIVE" style={styles.content}>
+            <Text style={styles.header}>
+              Truly Native
+            </Text>
+            <Text style={styles.text}>
+              Components you define will end up rendering as native platform widgets
+            </Text>
+          </View>
+          {/* Third tab */}
+          <View title="EASY" style={styles.content}>
+            <Text style={styles.header}>
+              Ease of Learning
+            </Text>
+            <Text style={styles.text}>
+              It’s much easier to read and write comparing to native platform’s code
+            </Text>
+          </View>
+
+        </Tabs>
+      </View>
 
     );
   }
 }
 
-const StyledView = styled.View`
-  flex: 1;
-`
-
-const StyledText = styled.Text`
-  font-size: 20px;
-  text-align: center;
-  color: lightpink;
-`
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1,                            // Take up all screen
+    backgroundColor: '#E91E63',         // Background color
   },
-  page: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  // Tab content container
+  content: {
+    flex: 1,                            // Take up all available space
+    justifyContent: 'center',           // Center vertically
+    alignItems: 'center',               // Center horizontally
+    backgroundColor: '#C2185B',         // Darker background for content area
+  },
+  // Content header
+  header: {
+    margin: 10,                         // Add margin
+    color: '#FFFFFF',                   // White color
+    fontSize: 26,                       // Bigger font size
+  },
+  // Content text
+  text: {
+    marginHorizontal: 20,               // Add horizontal margin
+    color: 'rgba(255, 255, 255, 0.75)', // Semi-transparent text
+    textAlign: 'center',                // Center
+    fontSize: 18,
   },
 });
