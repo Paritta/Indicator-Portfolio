@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import { Actions } from 'react-native-router-flux'
@@ -40,21 +40,6 @@ export default class AircornScreen extends React.Component {
       return null;
     }
   };
-
-  render() {
-    return (
-      <StyledView>
-        <TabViewAnimated
-          style={styles.container}
-          navigationState={this.state}
-          renderScene={this._renderScene}
-          renderHeader={this._renderHeader}
-          onRequestChangeTab={this._handleChangeTab}
-        />
-      </StyledView>
-
-    );
-  }
 }
 
 const StyledView = styled.View`
@@ -87,11 +72,27 @@ const AboutText = styled.Text`
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1,                            // Take up all screen
+    backgroundColor: '#E91E63',         // Background color
   },
-  page: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  // Tab content container
+  content: {
+    flex: 1,                            // Take up all available space
+    justifyContent: 'center',           // Center vertically
+    alignItems: 'center',               // Center horizontally
+    backgroundColor: '#C2185B',         // Darker background for content area
+  },
+  // Content header
+  header: {
+    margin: 10,                         // Add margin
+    color: '#FFFFFF',                   // White color
+    fontSize: 26,                       // Bigger font size
+  },
+  // Content text
+  text: {
+    marginHorizontal: 20,               // Add horizontal margin
+    color: 'rgba(255, 255, 255, 0.75)', // Semi-transparent text
+    textAlign: 'center',                // Center
+    fontSize: 18,
   },
 });
