@@ -24,7 +24,7 @@ export default class App extends Component {
           <Scene
             key="aircornscreen"
             component={AircornScreen}
-            title="Aircorn"
+            title="TmrPage"
           />
           <Scene
             key="inputscreen"

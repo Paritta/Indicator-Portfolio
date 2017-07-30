@@ -5,9 +5,12 @@ import styled from 'styled-components/native';
 export default class Indicator extends Component {
  
   render() {
+
+    let value = this.props.value;
+
     return (
       <ContainerView>
-        <CounterText>{Number(this.props.Indicator * 0.012).toFixed(2)}</CounterText>
+        <CounterText>{Number(this.props.Indicator * value).toFixed(2)}</CounterText>
         <Text style = {{color: 'white'}}>(단위: g)</Text>
       </ContainerView>
     );

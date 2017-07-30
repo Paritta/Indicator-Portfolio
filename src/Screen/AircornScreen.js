@@ -21,7 +21,7 @@ export default class AircornScreen extends React.Component {
     switch (route.key) {
     case '1':
       return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]} >
-                <Timer value={this.state.value}/>
+                <Timer value={this.props.value}/>
              </StyledView>
     case '2':
       return <StyledView style={[ styles.page, { backgroundColor: 'deepskyblue' } ]}>
