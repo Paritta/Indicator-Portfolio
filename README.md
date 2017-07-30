@@ -7,6 +7,23 @@ Indicator-Portfolio
 
 Demo
 ===
+
+<img src='./img/Demo1.jpg'>
+
+> 첫 화면
+
+<img src='./img/Demo2.jpg'>
+
+> 이산화탄소 측정을 선택하는 화면
+
+<img src='./img/Demo3.jpg'>
+
+> 타이머
+
+<img src='./img/Demo4.jpg'>
+
+> 안내
+
 Motivation
 ===
 
@@ -29,10 +46,6 @@ Styled-Component
 <img src='./img/image1.PNG'>
 
 > 진짜 컴포넌트의 시대다.
-
-<img src='./img/image2.PNG'>
-
-> repo 소스 코드 캡쳐
 
 
 Source Code
