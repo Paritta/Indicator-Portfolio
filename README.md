@@ -63,10 +63,8 @@ Main Technology stack
 * react-native-tab-view
 * styled-components
 
-Depolyment
-===
 Installation
----
+===
 1. Dowload
 ```
 $ git clone https://github.com/tjdgns8047/React-Native-Tuto.git
